@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: 246 247 250;
+  --card: 255 255 255;
+  --ink: 11 27 58;
+  --muted: 91 107 140;
+  --line: 221 226 236;
+  --accent: 31 79 224;
+  --navy: 11 27 58;
+}
+.dark {
+  --bg: 7 15 34;
+  --card: 13 24 48;
+  --ink: 234 240 255;
+  --muted: 148 163 196;
+  --line: 28 42 74;
+  --accent: 110 155 255;
+  --navy: 2 6 18;
+}
+html { scroll-behavior: smooth; }
+body { @apply bg-bg text-ink font-sans antialiased; }
+:focus-visible { outline: 2px solid rgb(var(--accent)); outline-offset: 3px; border-radius: 4px; }
+
+/* The single orchestrated moment: hero images unveil on load */
+@keyframes unveil { from { clip-path: inset(100% 0 0 0); transform: scale(1.06); } to { clip-path: inset(0); transform: scale(1); } }
+.unveil { animation: unveil 1.1s cubic-bezier(.2,.7,.2,1) both; }
+.unveil-2 { animation-delay: .15s; }
+.unveil-3 { animation-delay: .3s; }
+@media (prefers-reduced-motion: reduce) { .unveil { animation: none; } html { scroll-behavior: auto; } }
