@@ -1,12 +1,21 @@
 import type { NextConfig } from "next";
-const wpUrl = process.env.WP_URL || "https://cms.gihanchathuranga.com";
-const parsed = new URL(wpUrl);
-const config: NextConfig = {
+
+const wpUrl =
+  process.env.WP_URL || "https://cms.gihanchathuranga.com";
+
+const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
-      { protocol: parsed.protocol.replace(":", "") as "http" | "https", hostname: parsed.hostname },
-      { protocol: "https", hostname: "*.wp.com" }
-    ]
-  }
+      {
+        protocol: "https",
+        hostname: "cms.gihanchathuranga.com",
+      },
+      {
+        protocol: "https",
+        hostname: "gihanchathuranga.com",
+      },
+    ],
+  },
 };
-export default config;
+
+export default nextConfig;
