@@ -1,5 +1,5 @@
 import type { NextConfig } from "next";
-const wpUrl = process.env.WP_URL || "https://cms.gihanchathuranga.com";
+const wpUrl = process.env.WP_URL || "https://gihanchathuranga.com";
 const parsed = new URL(wpUrl);
 const config: NextConfig = {
   images: {
