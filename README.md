@@ -1,31 +1,24 @@
-# Gihan Chathuranga Website
+# Gihan Chathuranga – Headless WordPress frontend
 
-## WordPress Backend Configuration
+## Requirements
+- Node.js 20.9 or newer
+- A WordPress site with the REST API available
 
-The website uses WordPress REST API as its backend.
+## Run locally
+1. Install dependencies: `npm install`
+2. Copy `.env.example` to `.env.local`
+3. Set `WP_URL` to your WordPress site URL (no trailing slash)
+4. Start: `npm run dev`
+5. Open `http://localhost:3000`
 
-### Environment Variables
+## Deploy to Vercel
+Import this project repository into Vercel and add the environment variable:
+- `WP_URL` = `https://cms.gihanchathuranga.com`
 
-Set the following environment variable:
+Deploy after saving the variable. The WordPress site remains the content backend.
 
-WP_URL=https://cms.gihanchathuranga.com
-
-### WordPress API Endpoint
-
-https://cms.gihanchathuranga.com/wp-json/wp/v2
-
-### Development
-
-Install dependencies:
-
-npm install
-
-Run development server:
-
-npm run dev
-
-### Production Build
-
-npm run build
-
-npm start
+## Before launch
+- Confirm category slugs in `components/Categories.tsx` match WordPress.
+- Set your preferred contact email in `app/contact/page.tsx`.
+- If featured images use another host, add that hostname to `images.remotePatterns` in `next.config.ts`.
+- Check the public WordPress REST API at `/wp-json/wp/v2/posts`.
