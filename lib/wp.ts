@@ -1,4 +1,4 @@
-const WP = (process.env.WP_URL || "https://cms.gihanchathuranga.com").replace(/\/$/, "");
+const WP = (process.env.WP_URL || "https://gihanchathuranga.com").replace(/\/$/, "");
 
 export type Post = {
   id: number; slug: string; title: string; excerpt: string; content: string; date: string;
