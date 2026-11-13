@@ -13,7 +13,7 @@
 
 ## Deploy to Vercel
 Import this project repository into Vercel and add the environment variable:
-- `WP_URL` = `https://cms.gihanchathuranga.com`
+- `WP_URL` = `https://gihanchathuranga.com`
 
 Deploy after saving the variable. The WordPress site remains the content backend.
 
